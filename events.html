@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>الفعاليات - كلية الآداب</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topbar"><button class="login-btn">تسجيل الدخول</button></div>
+    <header class="main-header">
+        <div class="container nav-flex">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار كلية الآداب" />
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a class="active" href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الكلية</a></li>
+                    <li><a href="departments.html">الأقسام العلمية</a></li>
+                    <li><a href="students.html">شؤون الطلاب</a></li>
+                    <li><a href="postgraduates.html">الدراسات العليا</a></li>
+                    <li><a href="community.html">خدمة المجتمع</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="faculty-name">
+                <span>كلية الآداب<br><span class="subtext">جامعة القاهرة</span></span>
+            </div>
+        </div>
+    </header>
+    <section class="page-hero">
+        <h2 class="fade-in">الفعاليات والمؤتمرات</h2>
+        <p class="fade-in" style="animation-delay:.15s">تابع أهم الفعاليات والمؤتمرات الأكاديمية</p>
+    </section>
+    <main class="main-content">
+        <div class="events-calendar fade-in">
+            <h3>تقويم الفعاليات</h3>
+            <ul id="events-list">
+                <li class="event-item">ندوة ثقافية: 20 أكتوبر 2025</li>
+                <li class="event-item">مؤتمر الجغرافيا: 5 نوفمبر 2025</li>
+                <li class="event-item">ملتقى التوظيف: 18 نوفمبر 2025</li>
+            </ul>
+        </div>
+    </main>
+    <footer> ... </footer>
+    <script>
+        // Animation عند ظهور الأحداث
+        document.querySelectorAll('.event-item').forEach((el, i) => {
+            el.style.opacity = 0;
+            setTimeout(() => {
+                el.style.transition = "opacity .85s cubic-bezier(.7,0,.2,1)";
+                el.style.opacity = 1;
+            }, 300 + i * 200);
+        });
+    </script>
+</body>
+
+</html>

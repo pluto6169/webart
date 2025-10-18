@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلية الآداب - جامعة القاهرة</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="login.html" class="login-btn">تسجيل الدخول</a>
+    </div>
+
+    <header class="main-header">
+        <div class="container nav-flex">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار كلية الآداب" />
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a class="active" href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الكلية</a></li>
+                    <li><a href="departments.html">الأقسام العلمية</a></li>
+                    <li><a href="students.html">شؤون الطلاب</a></li>
+                    <li><a href="postgraduates.html">الدراسات العليا</a></li>
+                    <li><a href="community.html">خدمة المجتمع</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="faculty-name">
+                <span>كلية الآداب<br><span class="subtext">جامعة القاهرة</span></span>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-bg">
+            <!-- صورة الهيرو: استبدل بمبنى الكلية -->
+            <img src="images/photo.jpg" alt="مبنى كلية الآداب" />
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <h1>مرحباً بكم في كلية الآداب</h1>
+            <p>منارة العلم والمعرفة منذ عام 1908</p>
+            <button class="cta-btn">اكتشف المزيد</button>
+        </div>
+        <button class="slider-arrow left">&#9664;</button>
+        <button class="slider-arrow right">&#9654;</button>
+    </section>
+    <main class="main-content">
+        <!-- قسم أخبار سريع -->
+        <section class="home-section fade-in">
+            <h2>آخر الأخبار</h2>
+            <div class="card-list">
+                <div class="card">افتتاح مؤتمر الدراسات الإنسانية</div>
+                <div class="card">إعلان نتيجة التميز الأكاديمي</div>
+            </div>
+        </section>
+        <!-- قسم فعاليات سريع -->
+        <section class="home-section fade-in" style="animation-delay:.15s">
+            <h2>الفعاليات القادمة</h2>
+            <div class="card-list">
+                <div class="card">ندوة ثقافية - 20 أكتوبر</div>
+                <div class="card">مؤتمر الجغرافيا - 5 نوفمبر</div>
+            </div>
+        </section>
+        <!-- عدادات إحصائية متحركة -->
+        <section class="home-section stats-section fade-in" style="animation-delay:.3s">
+            <h2>إحصائيات الكلية</h2>
+            <div class="stats">
+                <div class="stat"><span id="s1">0</span><br>قسم علمي</div>
+                <div class="stat"><span id="s2">0</span><br>طالب</div>
+                <div class="stat"><span id="s3">0</span><br>جائزة أكاديمية</div>
+                <div class="stat"><span id="s4">0</span><br>بحث منشور</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+            </div>
+            <div class="footer-info">
+                <p>كلية الآداب - جامعة القاهرة<br>جميع الحقوق محفوظة &copy; 2025</p>
+                <p>البريد الإلكتروني: info@arts.cu.edu.eg</p>
+                <p>خريطة الموقع | سياسة الخصوصية</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // عداد الإحصائيات المتحرك
+        function animateCount(id, to, duration) {
+            let el = document.getElementById(id), start = 0, startTime = null;
+            function animate(ts) {
+                if (!startTime) startTime = ts;
+                let progress = Math.min((ts - startTime) / duration, 1);
+                el.textContent = Math.floor(progress * (to - start) + start);
+                if (progress < 1) requestAnimationFrame(animate);
+                else el.textContent = to;
+            }
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            animateCount('s1', 18, 900);
+            animateCount('s2', 6500, 1300);
+            animateCount('s3', 34, 800);
+            animateCount('s4', 127, 900);
+        });
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        window.addEventListener('scroll', () => {
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) el.classList.add('show');
+            });
+        });
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>إحصائيات الكلية - كلية الآداب</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="login.html" class="login-btn">تسجيل الدخول</a>
+    </div>
+    <header class="main-header">
+        <div class="container nav-flex">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار كلية الآداب" />
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a class="active" href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الكلية</a></li>
+                    <li><a href="departments.html">الأقسام العلمية</a></li>
+                    <li><a href="students.html">شؤون الطلاب</a></li>
+                    <li><a href="postgraduates.html">الدراسات العليا</a></li>
+                    <li><a href="community.html">خدمة المجتمع</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="faculty-name">
+                <span>كلية الآداب<br><span class="subtext">جامعة القاهرة</span></span>
+            </div>
+        </div>
+    </header>
+    <section class="page-hero">
+        <h2 class="fade-in">إحصائيات الكلية</h2>
+        <p class="fade-in" style="animation-delay:.12s">تعرف على أرقامنا وإنجازاتنا</p>
+    </section>
+    <main class="main-content stats-section">
+        <div class="stats">
+            <div class="stat"><span id="s1">0</span><br>قسم علمي</div>
+            <div class="stat"><span id="s2">0</span><br>طالب</div>
+            <div class="stat"><span id="s3">0</span><br>جائزة أكاديمية</div>
+            <div class="stat"><span id="s4">0</span><br>بحث منشور</div>
+        </div>
+    </main>
+    <footer> ... </footer>
+    <script>
+        // عدادات متحركة
+        function animateCount(id, to, duration) {
+            let el = document.getElementById(id), start = 0, startTime = null;
+            function animate(ts) {
+                if (!startTime) startTime = ts;
+                let progress = Math.min((ts - startTime) / duration, 1);
+                el.textContent = Math.floor(progress * (to - start) + start);
+                if (progress < 1) requestAnimationFrame(animate);
+                else el.textContent = to;
+            }
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            animateCount('s1', 18, 800);
+            animateCount('s2', 6500, 1200);
+            animateCount('s3', 34, 900);
+            animateCount('s4', 127, 1000);
+        });
+    </script>
+</body>
+
+</html>

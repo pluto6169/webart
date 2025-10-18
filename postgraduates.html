@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدراسات العليا - كلية الآداب جامعة القاهرة</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="login.html" class="login-btn">تسجيل الدخول</a>
+    </div>
+
+
+    <header class="main-header">
+        <div class="container nav-flex">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار كلية الآداب" />
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الكلية</a></li>
+                    <li><a href="departments.html">الأقسام العلمية</a></li>
+                    <li><a href="students.html">شؤون الطلاب</a></li>
+                    <li><a class="active" href="postgraduates.html">الدراسات العليا</a></li>
+                    <li><a href="community.html">خدمة المجتمع</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="faculty-name">
+                <span>كلية الآداب<br><span class="subtext">جامعة القاهرة</span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+
+        <div class="hero-content">
+            <h1>برامج الدراسات العليا</h1>
+            <p>دبلوم - ماجستير - دكتوراه</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="home-section fade-in">
+            <h2>البرامج المتاحة</h2>
+            <div class="card-list">
+                <div class="card">دبلوم الدراسات الأدبية</div>
+                <div class="card">ماجستير في اللغة العربية</div>
+                <div class="card">ماجستير في الجغرافيا البشرية</div>
+                <div class="card">دكتوراه في الفلسفة</div>
+                <div class="card">ماجستير في علم النفس الإكلينيكي</div>
+            </div>
+        </section>
+
+        <section class="home-section fade-in" style="animation-delay:.2s">
+            <h2>شروط القبول</h2>
+            <ul class="list">
+                <li>أن يكون المتقدم حاصلاً على درجة البكالوريوس بتقدير جيد على الأقل.</li>
+                <li>تقديم بحث مبدئي في مجال التخصص.</li>
+                <li>اجتياز المقابلة الشخصية أو الاختبار التحريري حسب القسم.</li>
+            </ul>
+        </section>
+
+        <section class="home-section fade-in" style="animation-delay:.35s">
+            <h2>التواصل</h2>
+            <p>📍 مكتب الدراسات العليا – الدور الثاني – كلية الآداب جامعة القاهرة</p>
+            <p>📞 الهاتف: 02-3567-1234</p>
+            <p>✉️ البريد الإلكتروني: postgrad@arts.cu.edu.eg</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>كلية الآداب - جامعة القاهرة<br>جميع الحقوق محفوظة &copy; 2025</p>
+                <p>البريد الإلكتروني: info@arts.cu.edu.eg</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        window.addEventListener('scroll', () => {
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) el.classList.add('show');
+            });
+        });
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأخبار - كلية الآداب</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="login.html" class="login-btn">تسجيل الدخول</a>
+    </div>
+
+    <header class="main-header">
+        <div class="container nav-flex">
+            <div class="logo"><img src="images/logo.png" alt="شعار كلية الآداب" /></div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الكلية</a></li>
+                    <li><a href="departments.html">الأقسام العلمية</a></li>
+                    <li><a href="students.html">شؤون الطلاب</a></li>
+                    <li><a href="postgraduates.html">الدراسات العليا</a></li>
+                    <li><a href="community.html">خدمة المجتمع</a></li>
+                    <li><a class="active" href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="faculty-name">
+                <span>كلية الآداب<br><span class="subtext">جامعة القاهرة</span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h2 class="fade-in">آخر الأخبار</h2>
+        <p class="fade-in" style="animation-delay:.14s">تابع كل جديد في كلية الآداب</p>
+    </section>
+
+    <main class="main-content">
+        <section class="fade-in">
+            <h2>الأحداث الجارية</h2>
+            <div class="card-list">
+                <div class="card">افتتاح مركز الدراسات الشرقية</div>
+                <div class="card">تكريم أوائل الخريجين لعام 2025</div>
+                <div class="card">إطلاق مجلة الآداب الإلكترونية</div>
+            </div>
+        </section>
+        <section class="fade-in" style="animation-delay:.2s">
+            <h2>بيانات رسمية</h2>
+            <p>تعلن إدارة الكلية عن بدء التسجيل في الفصل الدراسي الجديد اعتبارًا من 1 نوفمبر، مع الالتزام بالإجراءات
+                الأكاديمية المعتادة.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>كلية الآداب - جامعة القاهرة<br>جميع الحقوق محفوظة © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        window.addEventListener('scroll', () => {
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) el.classList.add('show');
+            });
+        });
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+
+</html>
